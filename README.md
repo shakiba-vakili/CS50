@@ -21,7 +21,7 @@ The potion must reach the fairy.
 2. If the dragon gets the potion, the game ends, and the gamer's score will be reduced.
 3. If none of them take the potion, nothing happens and the gamer has another chance to collect points.
 
-### How to view the file?
+## How to view the file?
 1. First enter the [link](https://scratch.mit.edu/projects/editor/?tutorial=getStarted)
 2. Download .sb3 file from GitHub
 3. Go to File
