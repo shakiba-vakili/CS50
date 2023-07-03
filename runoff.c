@@ -197,7 +197,7 @@ int find_min(void)
             minVote = candidates[i].votes;
         }
      }
-    return maxVote;
+    return minVote;
 }
 
 // Return true if the election is tied between all candidates, false otherwise
