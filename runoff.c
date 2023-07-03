@@ -156,7 +156,6 @@ void tabulate(void)
     int candidate;
     // TODO
     // check eliminated
-    // this loop is for finding the ballot
    for (int i = 0; i < voter_count; i++)
     {
         for (int j = 0; j < candidate_count; j++)
