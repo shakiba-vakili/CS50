@@ -20,6 +20,7 @@ int main(void)
         // text H = 72
         // conver to binary
         // H = 0 and 1
+        // now H = 00010010 => should H = 01001000
         for (int j = BITS_IN_BYTE -1; j >= 0; j--)
         {
             // >> = shifting to right
