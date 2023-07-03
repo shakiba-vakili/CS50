@@ -1,0 +1,42 @@
+sort1 uses: bubble sort
+random5000.txt     0.125s
+random10000.txt    0.313s
+random50000.txt    11.689s
+reversed5000.txt   0.116s
+reversed10000.txt  0.294s
+reversed50000.txt  9.126s
+sorted5000.txt     0.043s
+sorted10000.txt    0.088s
+sorted50000.txt    7.230s
+
+How do you know?: take less time for sorted data, but it works slowly for random and reverse data.
+
+sort2 uses: merge sort
+
+random5000.txt     0.035s
+random10000.txt    0.046s
+random50000.txt    4.428s
+reversed5000.txt   0.043s
+reversed10000.txt  0.085s
+reversed50000.txt  5.254s
+sorted5000.txt     0.045s
+sorted10000.txt    0.094s
+sorted50000.txt    4.871s
+
+
+How do you know?: merge sort is faster than other and take less time.
+
+sort3 uses: selection sort
+random5000.txt     0.068s
+random10000.txt    0.155s
+random50000.txt    6.528s
+reversed5000.txt   0.045s
+reversed10000.txt  0.164s
+reversed50000.txt  7.770s
+sorted5000.txt     0.069s
+sorted10000.txt    0.153s
+sorted50000.txt    6.679s
+
+How do you know?: the performance of the selection sort is poor on all three types of data.
+
+
