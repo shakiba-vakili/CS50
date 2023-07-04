@@ -103,6 +103,15 @@ int main(int argc, string argv[])
 bool vote(int rank, string name, int ranks[])
 {
     // TODO
+    // candidate_count = [A,B,C]
+    //         v0 v1 v2 v3
+    // i rank 0 |A|A|C|B| 
+    // i rank 1 |c|C|A|A|
+    // i rank 2 |B|B|B|C|
+    // v1 [0,2,1] => ranks
+    // v2 [0,2,1]
+    // v3 [2,0,1]
+    // v4 [1,0,2]
     for (int i = 0; i < candidate_count; i++)
      {
         if (strcmp(name, candidates[i]) == 0)
@@ -115,20 +124,28 @@ bool vote(int rank, string name, int ranks[])
 }
 
 // Update preferences given one voter's ranks
+//
 void record_preferences(int ranks[])
 {
     // TODO
     // how many people prefer i to j
-    // i | | | |
-    // i | | | |
-    //    j j j
+    // preferences [2,0,1] or [C,A,B]
+    // C => A,B 2ta
+    // A => B 1
+            // preferences[2][0]++
+            // preferences[2][1]++
+            // preferences[0][1]++
+            //    A0 B1 C2
+            //A0|  |+1|  |
+            //B1|  |  |  |
+            //C2|+1|+1|  |
      for (int i = 0; i < candidate_count; i++)
      {
-        for (int j = i +1 ; j < candidate_count; j++)
+        for (int j = i + 1 ; j < candidate_count; j++)
+            // rank[i,i+1 = j,...]
         {
             // prefer i over j
             preferences[ranks[i]][ranks[j]] += 1;
-
          }
      }
     return;
@@ -146,6 +163,8 @@ void add_pairs(void)
         for (int j = 0; j < candidate_count; j++)
         {
             // who prefer
+            // [A,C] >? [C,A] => [A,C] => insert
+            // [B,C] >? [B,C] => tie =>  no insert
             if(preferences[i][j] > preferences[j][i])
             {
                 // make pair
@@ -176,6 +195,9 @@ void sort_pairs(void)
    // Compare the size of the numbers. Check which is lower,
    //  then swap them in order that the lower value is in the
    //  position of the larger value (swap).
+   // [(6,5) (10,5) (9,2)] => [1,5,7]
+   // [(9,2) (10,5) (6,5)]
+    // strength \ max
    for (int i = pair_count-1; i >= 0; i--)
       {
       int min_weight = pair_weight(i);
