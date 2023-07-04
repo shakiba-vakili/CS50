@@ -221,10 +221,12 @@ bool cycle(int winner, int loser)
 {
     if(locked[loser][winner] == true)
     {
+        //there is cycle
         return true;
     }
     for (int i = 0; i < candidate_count; i++)
      {
+         //check with other candidates and the already candidates (bazgashti)
         if(locked[loser][i]==true && cycle(winner, i))
         {
             return true;
@@ -268,6 +270,7 @@ void print_winner(void)
             }
             else if (j == candidate_count - 1)
             {
+                //source
                 printf("%s\n", candidates[i]);
             }
 
